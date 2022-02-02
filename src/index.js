@@ -7,6 +7,7 @@ import {configureStore} from '@reduxjs/toolkit'
 import cartReducer from './features/cart'
 import inventoryReducer from './features/inventory'
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = configureStore({
   reducer:{
