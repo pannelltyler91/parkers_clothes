@@ -28,7 +28,7 @@ function Cart(props) {
       console.log(sendToServer);
       const data = sendToServer;
 
-fetch('https://example.com/profile', {
+fetch('http://localhost:3001/checkout', {
   method: 'POST', 
   headers: {
     'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ fetch('https://example.com/profile', {
 })
 .then(response => response.json())
 .then(data => {
-  console.log('Success:', data);
+  console.log('Success:', data.message);
 })
 .catch((error) => {
   console.error('Error:', error);
