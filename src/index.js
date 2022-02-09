@@ -11,16 +11,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = configureStore({
   reducer:{
-    cart:cartReducer,
-    inventory:inventoryReducer
-
+    cart: cartReducer,
+    inventory: inventoryReducer
   }
 })
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
