@@ -14,6 +14,38 @@ function Cart(props) {
   const cartCount = useSelector((state) => state.cart.cartCount)
   const total = useSelector((state) => state.cart.total)
   const dispatch = useDispatch();
+  const _checkout = (e) => {
+    e.preventDefault();
+    let sendToServer = []
+    cart.map((cartItem) => {
+      sendToServer.push({id:cartItem.id,quantity:cartItem.quantity})
+      return(
+        sendToServer
+        )
+      }
+      
+      )
+      console.log(sendToServer);
+      const data = sendToServer;
+
+fetch('https://example.com/profile', {
+  method: 'POST', 
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.error('Error:', error);
+});
+
+
+
+  }
   return (
     <Modal
       {...props}
@@ -66,7 +98,7 @@ function Cart(props) {
       <Modal.Footer>
           <Modal.Title>Total:${total}</Modal.Title>
         <Button onClick={props.onHide}>Close</Button>
-        <Button >Checkout</Button>
+        <Button onClick={_checkout} >Checkout</Button>
 
       </Modal.Footer>
     </Modal>
